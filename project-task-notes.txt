@@ -1,26 +1,4 @@
 These are my notes on the project task page. This project is called "Timestamp Microservice." The URL for the page which these notes are on is https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice
 
-- We are building a full stack JavaScript app:
-	-> We want this to be functionally similar to this -> https://timestamp-microservice.freecodecamp.rocks
-	-> It's an app which tells the time 
-	-> You can include time zone conversion but this is not necessary 
-	-> We are assuming all sent valid dates will be parsed with new Date() as GMT dates
-	-> It's a micro service -> like a function which is launched
-		-> Like a Python function which is hosted on a backend server 
-		-> But it's done with JavaScript, and returns the timestamp in a particular format when you insert the date
-		-> It takes the date string as an input and returns the timestamp in Unix syntax, with the NLP form of the date 
-	-> We are making requests to the micro services
-		-> We are making these requests using the .get method 
-		-> The user either provides them a date and time, or they don't 
-		-> If the user provides the micro service a date, then they interact with one URL (endpoint) in the micro service 
-		-> If they don't, then the current date and time is used - un which case another URL (endpoint) on the micro server is used 
-	-> It's a Node.js microservice 
-		-> The result is a JSON (JavaScript) object 
-		-> You can run it locally using a localhost, or bootstrap it and launch it using a backend server 
-	-> It's parsing the date strings and the data times 
-	-> The project will have routes and responses 
-
-- To write this:
-	-> You clone their GitHub repo -> this is the boilerplate code for the project 
-	-> You can also use their Gitpod starter project
-	-> Or a site builder -> this has to include the files from the project in their GitHub repo  
+- Enter here:
+	-> 
