@@ -23,3 +23,16 @@ Instructions for Running the Project Locally:
    You should receive a JSON response containing information about the client (IP address, language, and software).
 
 Now, you can interact with your project locally. If you encounter any issues or have further questions, feel free to let me know!
+
+First time: 
+	-> cd into the repository 
+	-> npm install 
+	-> node server.js
+	-> http://localhost:3000 in the browser 
+
+Every other time:
+	-> cd into the repository 
+	-> node server.js
+	-> In the browser -> http://localhost:3000
+
+
