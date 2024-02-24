@@ -1,4 +1,26 @@
-These are my notes on the project task page. This project is called "Timestamp Microservice." The URL for the page which these notes are on is https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice
+These are my notes on the project task page. This project is called "Request Header Parser Microservice." The URL for the page which these notes are on is https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice
 
-- Enter here:
-	-> 
+-> We are building a full-stack JavaScript app: 
+	-> This is similar to the previous project, but this time it's an app and not a microservice 
+	-> https://request-header-parser-microservice.freecodecamp.rocks/ <- this is the URL for the app which we want it to behave like 
+		-> It's a request header parser microservice 
+		-> The example use for this function is at [base url]/api/whoami
+			-> To use it, it's GET [project_url]/api/whoami
+		-> When you click on the link at this example URL, this is the output you see -> {"ipaddress":"","language":"en-GB,en-US;q=0.9,en;q=0.8","software":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"}
+		-> You click on the link for the microservice, and then it returns information about the client who made the request - by interacting with it
+
+-> There are different methods which we can use to do this: 
+	-> Clone their GitHub repository boilerplate code and install it locally 
+	-> Use their GitPod starter project to complete the code
+	-> Use a site builder to complete the project -> they don't say which 
+	-> Include all of the files from the boilerplate code in the project GitHub repository  
+
+-> In more detail:
+	-> The client makes a GET request to the server 
+	-> The server looks in the [project_url]/api/whoami] directory 
+	-> The server finds the information to return as a response object back to the server
+	-> This response object with the information is converted into a JSON (JavaScript) object and sent back to the client  
+	-> This JSON object contains information about the client: 
+		-> The IP address
+		-> The preferred language for their browser 
+		-> The client's system information 
