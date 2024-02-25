@@ -71,29 +71,80 @@ let cors = require('cors');
 app.use(cors({ optionSuccessStatus: 200 }));
 app.use(express.static('public'));
 
+/*
+	Uses of the .get method:
+		-> The client makes an GTTP get request to different directories in the server 
+		-> This method is telling the server how to respond to these requests 
+		-> This is referred to as route handling 
+		-> Each of these two uses of the .get method are route handlers 
+			-> We are telling the server how to respond to HTTP requests made to those directories 
+			-> If the client makes a request for this directory on the server, this is what you do 
+			-> And in this case we have two of them used in this, the main JavaScript file for the project 
 
+	The first route handler:
+		-> The arguments:
+			-> The HTTP GET requests for this are made to the '/' directory on the server 
+			-> To make these requests to the server, the client is sending the request (`req`) objects 
+			-> The server then sends back the response (`res`) object to the client 
+			-> The first argument is the relative path to the directory on the server which the route hander is 
+        managing 
+			-> The second argument is for the error function -> this is the function which we use for error handling 
+        at the end of the request
 
+		-> Serving the html file:
+			-> The project has an index.html file -> this is stored on the server 
+			-> We are instructing the server to send this file back to the client when the HTTP GET request is made to it 
+			-> This is done using the .sendFile Express method 
+				-> .app is the Express application from earlier in this document 
+			-> res <- since this is the response object which the server is sending back 
+			-> The server is responding back with the HTML file as an attachment 
+			-> This argument to this function is the absolute path of the index.html file on the server
+				-> This is the current directory (`__dirname`), combined with the relative path extension 
+          '/views/index.html'
+				-> The current directory (`__dirname`) is a global variable in Node.js
 
+		-> The client makes an HTTP GET request to the root path 
+		-> The server then responds by sending the HTML file for the project back 
+		-> For that to happen, we are passing in the path to that file on the server as its argument 
+		-> This then gets sent back ('served')
 
+	The second route handler:
+		-> This is the route handler which serves the files stored in the '/api/whoami' directory on the server 
+		-> The client makes HTTP GET requests to this directory on the server 
+		-> This JavaScript is telling the server what to do when these requests are made 
+		-> We are using the Express .get method 
+			-> app. <- this is the variable which stores the Express application 
 
+		-> The arguments to this function: 
+			-> The first is the path to the directory on the server where the call is made
+			-> The second is the function for error handling -> the arguments of this are:
+				-> `res` <- the response object which is sent from the server to the client 
+				-> `req` <- the requested object which is sent from the client to the server when the HTTP GET request is 
+            made 
 
+		-> The response object which the server sends back to the client:
+			-> We are using the res.json method <- we are sending a JavaScript (JSON) object back to the client who made 
+          the GET request, from the server  
+			-> This is the section of the JavaScript application where we send back the information about the user
+			-> Each of the elements in this JSON object are pertaining to the user 
+			-> The information is obtained using the .get method <- this returns the requested information in each of the 
+          cases (the client IP address, client's language preferences and operating system)
+				-> We are running this method on the req object -> because this is the request object which was sent by the client, 
+            and contains this information about them 
+				-> The .get method on this object, because this is what we use to send back information about something 
 
-
-
-
-
-
-
-
-
-
-
+		-> The user sends an HTTP GET request 
+		-> This reaches the server 
+		-> This route handler tells the server to look into its '/api/whoami' path 
+		-> The server responds with a JSON object because of this route handler 
+		-> That JSON object gets sent back to the client -> which contains the information about them 
+		-> That information was obtained by running the .get method on the request object which it sent to the server when 
+        that request was initially made 
+*/
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
-
-
 
 app.get('/api/whoami', function (req, res) {
   res.json({
@@ -102,6 +153,24 @@ app.get('/api/whoami', function (req, res) {
     "software": req.get('user-agent')
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 app.use(function (req, res) {
