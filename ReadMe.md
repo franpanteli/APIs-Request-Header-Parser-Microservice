@@ -6,7 +6,7 @@ This repository contains my independent problem-solving work used to produce a f
 
 ## API Endpoints
 
-The path for the project's primary API endpoint is /api/whoami. When a client makes an HTTP GET request to this endpoint, the server responds with a JSON / JavaScript object. This contains their IP address, language preferences, and software information. Error handling was also implemented to serve the project index.html file.
+The path for the project's primary API endpoint is /api/whoami. When a client makes an HTTP GET request to this endpoint, the server responds with a JavaScript JSON object. This contains their IP address, language preferences, and software information. Error handling was also implemented to serve the project index.html file.
 
 ## Dependencies
 This project has two dependencies. The first is [express](https://www.npmjs.com/package/express), which was used to build the web application in its [server.js file](https://github.com/franpanteli/APIs-Request-Header-Parser-Microservice-Project/blob/main/server.js). The second dependency is [cors](https://www.npmjs.com/package/cors), which was used to produce Cross-Origin Resource Sharing middleware.
