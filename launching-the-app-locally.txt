@@ -28,7 +28,7 @@ Every other time:
 	-> node server.js
 	-> In the browser 
 		-> http://localhost:3000 <- this serves the index.html file 
-		-> http://localhost:3000/api/whoami <- this hosts the micro service 
+		-> http://localhost:3000/api/whoami <- this hosts the microservice 
 			-> If you use this URL, then you are effectively the client making the call to the browser 
 
 
