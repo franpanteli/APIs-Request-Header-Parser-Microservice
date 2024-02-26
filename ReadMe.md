@@ -7,11 +7,10 @@ This repository contains my independent work for a request header parser microse
 
 ## Microservice Installation & Usage
 
-This microservice can be installed and run locally. First, clone this repository with `git clone https://github.com/franpanteli/APIs-Timestamp-Microservice-Project.git`, navigate to the project directory with `cd`, and install dependencies using `npm install`. Run the server with `npm start` and open the application in a web browser at `http://localhost:3000`.
+This microservice can be installed and run locally. First, clone this repository with `git clone https://github.com/franpanteli/APIs-Request-Header-Parser-Microservice-Project.git`, navigate to the project directory with `cd`, and install dependencies using `npm install`. Run the server with `npm start` and open the application in a web browser at `http://localhost:3000`.
 
 ## API Endpoints
-
-The project defines two main API endpoints. The first, `/api`, responds to a GET request with the current timestamp in both Unix and UTC formats. The second, `/api/:date_string`, handles user-entered date strings, validating the format and responding with Unix and UTC timestamps accordingly. Error handling has also been implemented for invalid date strings.
+The primary API endpoint of the 'Request Header Parser Microservice' project, located at /api/whoami, handles GET requests by providing the client's IP address, language preferences, and software details in a JSON format. Error handling mechanisms are integrated to ensure proper responses even in unexpected scenarios.
 
 ## Examples
 
@@ -22,6 +21,8 @@ The project defines two main API endpoints. The first, `/api`, responds to a GET
 
 The project relies on [express](https://www.npmjs.com/package/express) and [cors](https://www.npmjs.com/package/cors).
 
+
+The project relies on express for building the web application and cors for Cross-Origin Resource Sharing middleware.
 
 
 
