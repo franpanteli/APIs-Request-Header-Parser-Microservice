@@ -197,14 +197,53 @@ app.use(function (req, res) {
   res.sendFile(__dirname + '/views/error.html');
 });
 
-
-
-
-
-
-
-
 // Use a default port if process.env.PORT is not available
+
+/*
+	Assigning the application a port to use: 
+		-> Finally, we configure and start the server 
+		-> The first line uses a port if the proccess.env.PORT is not available 
+			-> We set a constant equal to `port`
+			-> The pipe symbol || means if this default port isn't available, then use this one instead
+			-> process.env.PORT <- this is an environment variable 
+				-> The value of this can be set externally, assign 
+a port to the application 
+		-> The server is listening to the port specified by the process.env.PORT environment variable <- and if otherwise, the 
+        server will listen to the `300` port 
+	
+	Telling the server to listen to the port we have assigned:
+		Binding the server to the port: 
+			-> let listener = app.listen(port, function () { ... });:
+			-> We define a constant called `listener`
+			-> `app` is instance of the Express application which we are telling to listen to this port  
+			-> The method we are using for this is the .listen method 
+			-> This is telling this application to listen to the given port <- we are in effect binding them together 
+
+		The arguments of this are:
+			-> The variable which stores the value of the port which we want to listen to -> this is the `port` variable 
+			-> function <- this is the function which we use for error handling 
+				-> When using JavaScript, the first arguments are often the ones which the section of code you are writing uses, and the 
+            last is associated with error handling 
+
+		When this code is executed, we log the message to the console: 
+			-> We know the application is listening to the port 
+			-> This is done using the console.log method
+			-> We are printing the port number which the application is listening to when this code is ran <- by using the absolute 
+          value of the `port` variable 
+			-> This is how we know the server has been started successfully
+
+		The callback function:
+			-> We have defined a variable which tells the server / app to listen to a certain port for calls from the client 
+			-> One of the arguments of this variable is an entire function 
+			-> This is the callback function, `function`
+			-> console.log <- this is setting this function 
+			-> We are setting a variable telling the app to listen to a certain port <- and when this is executed, we will know because 
+          the function is run
+			-> There are two separate purposes - the first is to tell the app to listen to the port, and the second is to log that the 
+          server is on and listening to the port <- via a function
+			-> After we have told the server which port to listen to, we are then logging this to the console 
+*/
+
 const port = process.env.PORT || 3000;
 let listener = app.listen(port, function () {
   console.log('app is listening on port ' + port);
