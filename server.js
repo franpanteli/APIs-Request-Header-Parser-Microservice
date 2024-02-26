@@ -154,29 +154,55 @@ app.get('/api/whoami', function (req, res) {
   });
 });
 
+/*
+	A final use of the .use method:
+		Middleware functions:
+			-> This was the method we use to set up middleware for the function 
+			-> This is executed for all routes 
+			-> app <- this is the Express application 
+			-> The arguments which this takes are req and res 
+				-> The client makes a call to the server
+				-> This sends the request (`req`) object to the server
+				-> Then the server sends the response (`res`) object back to the client 
+			-> Middleware functions are ones which target the object in between when the response object is sent from the 
+          server to the client, or when the request object is sent from the client to the server 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		This is a route handler for error handling:
+			-> We are telling the server to send back an error message
+			-> This middleware function is executed for all routes 
+			-> We are sending the HTTP status code of the response 404 <- this is the 'Not Found' response 
+				-> The case that the client makes a request for a file which isn't on the server
+				-> We are checking the status of that error message (the 404 error), using the .status method 
+				-> We are checking this for the response object <- the one which the server sends back to the client 
+			-> We then serve the HTML file with the error message
+				-> The server is sending ('serving') the HTML file called error.html back to the client 
+				-> The arguments of this function tell the server where to find the file to respond with 
+				-> `__dirnmae` <- this is the global Node.js variable which contains the path to the current directory of the 
+            script 
+				-> error.html is the HTML page which is shown when there is an error message (the 404 error message) -> the HTML 
+            file we're trying to otherwise serve to the client doesn't exist 
+		
+		-> This is a route handler for error handling 
+		-> When the user tries to access a route which isn't on the server -> then this middleware function is triggered
+		-> Instead of serving them the HTML file which would otherwise be shown, we are serving them the one with the error 
+        message on it 
+		-> Because this is for the case where the HTML file which we would otherwise want to serve doesn't exist on the server 
+			-> This would correspond to a 404 error 
+			-> The user is then being told that the requested resource wasn't found, and that they would be sent ('served') this 
+        error.html file by the server 
+*/
 
 app.use(function (req, res) {
   res.status(404);
   res.sendFile(__dirname + '/views/error.html');
 });
+
+
+
+
+
+
+
 
 // Use a default port if process.env.PORT is not available
 const port = process.env.PORT || 3000;
