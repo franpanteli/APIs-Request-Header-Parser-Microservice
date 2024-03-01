@@ -3,6 +3,7 @@ This repository contains my independent problem-solving work, used to produce a 
 
 ## Microservice Installation & Usage
 <img width="791" alt="Screenshot 2024-03-01 at 20 34 28" src="https://github.com/franpanteli/APIs-Request-Header-Parser-Microservice-Project/assets/131474705/44c12cd5-4712-4b36-8d20-62efe8a39624">
+
 [My full notes on how to run the project locally are here](https://github.com/franpanteli/APIs-Request-Header-Parser-Microservice-Project/blob/main/launching-the-app-locally.txt).  First, clone this repository with `git clone https://github.com/franpanteli/APIs-Request-Header-Parser-Microservice-Project.git`.
 
 ## API Endpoints
